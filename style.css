@@ -150,13 +150,6 @@ h2 {
   font-weight: bold;
 }
 
-@media screen and (max-width: 600px) {
-  .top-bar {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
-
   #Desconto {
     flex-direction: column;
     align-items: flex-start;
@@ -174,6 +167,7 @@ h2 {
     max-width: 100%;
   }
 }
+
 
 
 
