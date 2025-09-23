@@ -1,13 +1,9 @@
-/* Reset básico */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
-}
-
-input{
-  font-size: 16px;
 }
 
 body {
@@ -18,6 +14,7 @@ body {
 
 .top-bar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   background: #fff;
@@ -27,23 +24,47 @@ body {
   margin-bottom: 20px;
 }
 
+.input-endereco {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 200px;
+}
+
+#cepInput {
+  width: 100%;
+  padding: 10px 35px 10px 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: #efefef;
+  font-size: 16px;
+  height: 35px;
+}
+
+.icone-lupa {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+}
+
 .desconto-tag {
   background-color: #c6f9d6;
-  height: 42px;
   padding: 10px;
   font-size: 15px;
+  border-radius: 10px;
+  text-align: center;
 }
 
-span{
-    border-radius: 30px;
-    text-align: center;
-    padding: 10px
-}
-
-#Desconto{
-    display: flex;
-    justify-content: space-between;
-    margin: 15px 0;
+#Desconto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 15px 0;
+  gap: 10px;
 }
 
 .conteudo {
@@ -54,38 +75,36 @@ span{
 }
 
 h2 {
-  margin-bottom: 20px;
   font-size: 22px;
+  margin-bottom: 20px;
 }
 
 .mercados {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   gap: 15px;
   margin-bottom: 20px;
 }
 
-.mercados div {
+.mercados > div {
   background-color: #eee;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 60px;
   border-radius: 8px;
-  padding: 10px;
+  box-shadow: 5px 5px 10px #00000030;
+  cursor: pointer;
+}
+
+.mercados > div:hover {
+  background-color: #d2d2d2;
+  transition: 0.5s;
 }
 
 .mercados img {
   max-height: 45px;
   max-width: 100%;
-}
-.mercados > div{
-    box-shadow: 5px 5px 10px #00000030;
-    cursor: pointer;
-}
-.mercados > div:hover{
-    background-color: #d2d2d2;
-    transition: 0.5s;
 }
 
 .descontos-header {
@@ -103,14 +122,13 @@ h2 {
 .vermelho:hover {
   color: #e30000;
 }
-
 .verde {
   color: green;
 }
 
 .produtos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 15px;
 }
 
@@ -125,56 +143,39 @@ h2 {
   font-size: 14px;
 }
 
- /* Endereço centralizado quando válido */
 .endereco-centralizado {
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-weight: bold;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
 }
 
-.input-endereço {
-    margin-left: 10px;
-}
-#cepInput {
-   padding: 5px;
-   border-radius: 20px;
-   padding-left: 10px;
-   border: none;
-   outline: none;
-   background-color: #efefef;
-}
-.botao-buscar {
-   padding: 3px;
-   border: none;
-   border-radius: 10px;
-   outline: none;
-}
- .input-endereço {
-    position: relative;
-    display: inline-block;
-    }
+@media screen and (max-width: 600px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
 
-    #cepInput {
-      padding-right: 35px; /* espaço para a lupa */
-      height: 35px;
-    }
+  #Desconto {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .icone-lupa {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      cursor: pointer;
-      color: #555;
-    }
+  .mercados {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  }
 
-    .endereco-centralizado {
-      display: block;
-      width: 100%;
-      text-align: center;
-      font-weight: bold;
-    }
+  .produtos {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+
+  .input-endereco {
+    max-width: 100%;
+  }
+}
+
+
 
 
 
